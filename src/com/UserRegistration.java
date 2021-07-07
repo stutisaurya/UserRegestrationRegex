@@ -15,14 +15,6 @@ public class UserRegistration {
 		return match.matches();
 	}
 
-	/**
-	 * isLastName is a method of static boolean type isLastName method used to
-	 * validate user last name
-	 * 
-	 * @param lastname
-	 * @return if pattern matches method returns true otherwise it return false
-	 */
-
 	public static boolean isLastName(String lastname) {
 		String regex = "^[A-Z]{1}[a-z]{2,}";
 		Pattern patt2 = Pattern.compile(regex);
@@ -32,14 +24,6 @@ public class UserRegistration {
 		Matcher match2 = patt2.matcher(lastname);
 		return match2.matches();
 	}
-
-	/**
-	 * isvalidateEmail is a method of static boolean type isvalidateEmail method
-	 * used to validate user Email id
-	 * 
-	 * @param email
-	 * @return if pattern matches method returns true otherwise it return false
-	 */
 
 	public static boolean isvalidateEmail(String email) {
 		String regex = "^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?";
@@ -51,13 +35,6 @@ public class UserRegistration {
 		return match2.matches();
 	}
 
-	/**
-	 * isMobileFormatValid is a method of static boolean type isMobileFormatValid
-	 * method used to validate user mobile number
-	 * 
-	 * @param mobile
-	 * @return if pattern matches method returns true otherwise it return false
-	 */
 	public static boolean isMobileFormatValid(String mobile) {
 		String regex = "^((\\+)?(\\d{2}[\\s]))?(\\d{10}){1}?$";
 		Pattern patt = Pattern.compile(regex);
@@ -67,14 +44,6 @@ public class UserRegistration {
 		Matcher match = patt.matcher(mobile);
 		return match.matches();
 	}
-
-	/**
-	 * isPasswordValid is a method of static boolean type isPasswordValid method
-	 * used to validate user password Rule 1: should have atleast 8 characters
-	 * 
-	 * @param password
-	 * @return if pattern matches method returns true otherwise it return false
-	 */
 
 	public static boolean isPasswordValid(String password) {
 		String regex = "^[a-zA-Z]{8,}";
@@ -86,12 +55,7 @@ public class UserRegistration {
 		return match.matches();
 	}
 
-	/**
-	 * Main method Will ask user to enter first name, last name, email id, phone
-	 * number and password to Validate and prints weather its correct or not correct
-	 *
-	 */
-
+//Main
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter firstname:");
