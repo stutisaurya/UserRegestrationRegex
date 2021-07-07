@@ -5,7 +5,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserRegistration {
-
 	public static boolean isFirstName(String firstname) {
 		String regex = "^[A-Z]{1}[a-z]{2,}";
 		Pattern patt = Pattern.compile(regex);
@@ -70,6 +69,24 @@ public class UserRegistration {
 	}
 
 	/**
+	 * isPasswordValid is a method of static boolean type isPasswordValid method
+	 * used to validate user password Rule 1: should have atleast 8 characters
+	 * 
+	 * @param password
+	 * @return if pattern matches method returns true otherwise it return false
+	 */
+
+	public static boolean isPasswordValid(String password) {
+		String regex = "^[a-zA-Z]{8,}";
+		Pattern patt = Pattern.compile(regex);
+		if (password == null) {
+			return false;
+		}
+		Matcher match = patt.matcher(password);
+		return match.matches();
+	}
+
+	/**
 	 * Main method Will ask user to enter first name, last name, email id, phone
 	 * number and password to Validate and prints weather its correct or not correct
 	 *
@@ -85,6 +102,8 @@ public class UserRegistration {
 		String email = input.nextLine();
 		System.out.println("Enter mobile number");
 		String phoneNumber = input.nextLine();
+		System.out.println("Enter password");
+		String password = input.nextLine();
 		if (isFirstName(firstname) == true) {
 			System.out.println("Firstname is Correct");
 		} else {
@@ -107,5 +126,11 @@ public class UserRegistration {
 		} else {
 			System.out.println("Phone Number is Incorrect");
 		}
+		if (isPasswordValid(password) == true) {
+			System.out.println("Password is Valid");
+		} else {
+			System.out.println("Password is Invalid");
+		}
 	}
+
 }
