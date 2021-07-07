@@ -46,8 +46,7 @@ public class UserRegistration {
 	}
 
 	public static boolean isPasswordValid(String password) {
-		String regex = ("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$");
-		;
+		String regex = ("^(?=.*[@#$%^&+=])(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$");
 		Pattern patt = Pattern.compile(regex);
 		if (password == null) {
 			return false;
@@ -96,5 +95,4 @@ public class UserRegistration {
 			System.out.println("Password is Invalid");
 		}
 	}
-
 }
