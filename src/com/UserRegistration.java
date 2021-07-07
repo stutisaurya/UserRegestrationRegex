@@ -46,7 +46,7 @@ public class UserRegistration {
 	}
 
 	public static boolean isPasswordValid(String password) {
-		String regex = "^[a-zA-Z]{8,}";
+		String regex = "^(?=.[a-z])(?=.[A-Z]).{8,}$";
 		Pattern patt = Pattern.compile(regex);
 		if (password == null) {
 			return false;
@@ -55,7 +55,6 @@ public class UserRegistration {
 		return match.matches();
 	}
 
-//Main
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter firstname:");
@@ -96,4 +95,5 @@ public class UserRegistration {
 			System.out.println("Password is Invalid");
 		}
 	}
+
 }
