@@ -132,5 +132,4 @@ public class UserRegistration {
 			System.out.println("Password is Invalid");
 		}
 	}
-
 }
